@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+# Create non-AWS lab folders and add README and notes placeholders
+
+labs=(
+  "Credential-Harvesting-Lab"
+  "Password-Hashing-Shadow-Analysis"
+  "Phishing-Simulation"
+  "Rainbow-Table-Cracking"
+  "Ransomware-Analysis"
+  "Backdoor-Lab"
+)
+
+mkdir -p "screen shots"
+for lab in "${labs[@]}"; do
+  mkdir -p "screen shots/${lab}"
+  cat > "screen shots/${lab}/README.md" <<'MD'
+# LAB_NAME
+
+Short description:
+- One line summary of the lab and its goal.
+
+Files:
+- screenshots/ (place images here)
+- notes.txt — commands run, verification steps, and timestamps.
+
+What this proves:
+- One line explaining what the screenshots and notes demonstrate.
+
+How to view:
+- Open README on GitHub to view images inline, or clone the repo and open images locally.
+MD
+  # Replace placeholder LAB_NAME with actual folder name
+  sed -i "s/LAB_NAME/${lab}/g" "screen shots/${lab}/README.md"
+
+  # Create a notes file placeholder
+  cat > "screen shots/${lab}/notes.txt" <<'TXT'
+# Notes for LAB_NAME
+
+Commands used:
+- (paste commands here)
+
+Verification steps:
+- (how you validated the lab)
+
+Artifacts:
+- list of screenshot filenames and short captions
+TXT
+  sed -i "s/LAB_NAME/${lab}/g" "screen shots/${lab}/notes.txt"
+
+  # Create screenshots subfolder
+  mkdir -p "screen shots/${lab}/screenshots"
+done
+
+# Add a top-level README for screen shots folder
+cat > "screen shots/README.md" <<'MD'
+# Screen shots
+
+This folder contains screenshots organized by lab. Each subfolder documents a specific lab exercise and includes images and a short notes file describing commands and verification steps.
+
+Subfolders:
+- Credential-Harvesting-Lab
+- Password-Hashing-Shadow-Analysis
+- Phishing-Simulation
+- Rainbow-Table-Cracking
+- Ransomware-Analysis
+- Backdoor-Lab
+MD
+
+echo "Created folders and template files under 'screen shots/'."
