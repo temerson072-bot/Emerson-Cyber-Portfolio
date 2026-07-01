@@ -67,3 +67,21 @@ Subfolders:
 MD
 
 echo "Created folders and template files under 'screen shots/'."
+
+
+# Screen shots
+
+This folder contains screenshots and short artifacts organized by lab. Each subfolder documents a specific lab exercise and includes images and a `notes.txt` file describing what the images prove and how the lab was validated.
+
+Subfolders:
+- Backdoor-Lab
+- Credential-Harvesting-Lab
+- Password-Hashing-Shadow-Analysis
+- Phishing-Simulation
+- Rainbow-Table-Cracking
+- Ransomware-Analysis
+
+How to use:
+- Open a subfolder to view images and `notes.txt` for that lab.
+- All sensitive data (IPs, usernames, keys) has been redacted or blurred.
+
