@@ -1,0 +1,25 @@
+# Trojan Lab
+
+**Short description**  
+Controlled, educational lab demonstrating safe handling and documentation of a Trojan-style payload in an isolated environment. All artifacts are sanitized and non-actionable.
+
+**Files**
+- `screenshots/backdoor-msfconsole.png` — Metasploit console showing module and payload configuration (sensitive fields redacted).  
+- `screenshots/backdoor-payload-config.png` — Payload options set (SRVHOST, FILENAME, PAYLOAD) with values redacted.  
+- `screenshots/backdoor-apache-index.png` — Apache directory index showing hosted artifact `musicvideo.mcl` (redacted).  
+- `screenshots/backdoor-run-output.png` — Exploit run output showing handler started and file created (no session).  
+- `screenshots/backdoor-windows-warning.png` — Windows security warning dialog for unsigned executable (illustrates user risk).  
+- `notes.txt` — High-level notes, verification steps, timestamps, and defensive recommendations.
+
+**What this proves**
+- Ability to perform safe, isolated testing and to document artifacts for defensive analysis.  
+- Understanding of how payloads can be hosted and how endpoint warnings appear to users.  
+- Awareness of detection and mitigation controls relevant to this class of activity.
+
+**Safety and privacy**
+- **No executable files, runnable commands, or step‑by‑step instructions** are published.  
+- **All IPs, hostnames, usernames, and keys are redacted or blurred** in screenshots.  
+- Work was performed in an isolated lab environment; do not run samples on production systems.
+
+**How to view**
+Open this README on GitHub to view images inline, or clone the repo and open images locally. See `notes.txt` for high‑level verification and defensive notes.
